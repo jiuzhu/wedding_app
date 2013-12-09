@@ -1,0 +1,23 @@
+<div class="page-header">
+  <h1>Welcome <%= current_user.first_name %>!</h1>
+</div>
+
+<div class="col-md-12 text_center">
+	<h4><%= @numDaysLeft.to_i %> Days left till the big day!</h4>
+</div>
+
+<div class="col-md-12 text_center">
+	<h4>You have <%= @numGuests %> guests that have been invited.</h4>
+</div>
+
+<div class="col-md-12 text_center">
+	<h4>You have <%= @numYes %> guests that are coming.</h4>
+</div>
+
+<div class="col-md-12 text_center">
+	<h4>You have <%= @numNo %> guests that are not coming.</h4>
+</div>
+
+<div class="col-md-12 text_center">
+	<h4>You have <%= @numPending %> guests that have not responded.</h4>
+</div>

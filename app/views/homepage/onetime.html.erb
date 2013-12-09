@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>Welcome To The Wedding App</h1>
+</div>
+
+<div class="col-md-12">
+	<h4> As this is your first time logging in, please setup your profile </h4>
+</div>
+
+
+<%= form_tag(user_url(@user), method: 'patch', class: 'form-horizontal') do %>
+  <div class="form-group">
+    <%= label_tag :first_name, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :first_name, @user.first_name, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :last_name, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :last_name, @user.last_name, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :wedding_date, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= date_field_tag :wedding_date, @user.wedding_date, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-6">
+      <%= submit_tag "Update Profile", class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

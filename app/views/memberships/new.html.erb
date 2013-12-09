@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h1>New Guest Group</h1>
+</div>
+
+<%= form_tag(memberships_url, method: 'post', class: 'form-horizontal') do %>
+  <div class="form-group">
+    <%= label_tag :guest_id, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+    <%= select_tag :guest_id, options_from_collection_for_select(Array(@guests), "id", "full_name"), prompt: "Please Choose A Guest" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :group_id, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= select_tag :group_id, options_from_collection_for_select(Array(@groups), "id", "name"), prompt: "Please Choose A Group" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-6">
+      <%= submit_tag "Create Membership", class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

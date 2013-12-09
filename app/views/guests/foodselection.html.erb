@@ -1,0 +1,49 @@
+<H1> Guest Food View </h1>
+
+	<div class="col-md-12">        
+		<div class="col-md-3">      
+			<h4>Guest Name</h4>
+		</div>
+
+		<div class="col-md-3">      
+			<h4>Guest Preference</h4>
+		</div>
+
+		<div class="col-md-3">      
+			<h4>Date Preference</h4>
+		</div>
+
+		<div class="col-md-3">      
+			<h4>&nbsp;</h4>
+		</div>
+	</div>
+
+
+	<% Array(@guests).each do |guest| %>
+		<% guest.rsvps.each do |rsvp| %>
+		<div class="col-md-12">  
+			<div class="col-md-3">      
+				<%= guest.first_name + ' ' + guest.last_name %>
+			</div>
+
+			<div class="col-md-3">      
+				<%= rsvp.your_food_preference %>
+			</div>
+
+			<div class="col-md-3">      
+				<%= rsvp.guest_food_preference %>
+			</div>
+
+			<div class="col-md-3">      
+				&nbsp;
+			</div>
+		</div>
+		<% end %>
+	<% end %>
+
+
+	<%= @totalBeef %>
+
+
+
+</div>

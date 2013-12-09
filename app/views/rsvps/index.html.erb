@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>Rsvps</h1>
+</div>
+
+
+
+
+<p><%= link_to 'Add a New Rsvp', new_rsvp_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Guest</th>
+      <th>Your food preference</th>
+      <th>Your guest's food preference</th>
+      <th>Num guests</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rsvps.each do |rsvp| %>
+      <tr>
+        <td><%= rsvp.guest.first_name + ' ' + rsvp.guest.last_name %></td>
+        <td><%= rsvp.your_food_preference %></td>
+        <td><%= rsvp.guest_food_preference %></td>
+        <td><%= rsvp.num_guests %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, rsvp_url(rsvp), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_rsvp_url(rsvp), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, rsvp_url(rsvp), method: 'delete', data: { confirm: "Do you really want to delete this rsvp?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,12 @@
+<h1>Editing Group #<%= @group.id %></h1>
+
+<%= form_tag(group_url(@group), method: 'patch') do %>
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @group.name %>
+  </div>
+
+  <div>
+    <%= submit_tag "Update Group", class: 'btn btn-primary' %>
+  </div>
+<% end %>

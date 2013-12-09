@@ -1,0 +1,79 @@
+<div class="page-header">
+
+<% if @guest %>
+  <% if @guest.errors.messages.any? %>
+    <ul>
+      <% @guest.errors.full_messages.each do |error| %>
+      <li><div class="errors"> <%= error %> </div></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
+
+  <h1>New Guest</h1>
+</div>
+
+<%= form_tag(guests_url, method: 'post', class: 'form-horizontal') do %>
+  <div class="form-group">
+    <%= label_tag :first_name, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :first_name, nil, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :last_name, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :last_name, nil, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :email, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :email, nil, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :address_1, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :address_1, nil, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :address_2, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :address_2, nil, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :city, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :city, nil, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :state, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= select_tag :state, options_for_select(us_states) %> 
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :zip, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :zip, nil, class: 'form-control' %>
+    </div>
+  </div
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-6">
+      <%= submit_tag "Create Guest", class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

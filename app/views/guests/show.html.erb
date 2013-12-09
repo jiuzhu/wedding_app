@@ -1,0 +1,41 @@
+<div class="page-header">
+  <h1>Guest #<%= @guest.id %></h1>
+</div>
+
+<h4> Member of groups </h4>
+
+<ul>
+  <% @guest.groups.each do |group| %>
+  <li><%= group.name %></li>
+  <% end %>
+</ul>
+
+
+<dl class="dl-horizontal">
+  <dt>First name</dt>
+  <dd><%= @guest.first_name %></dd>
+
+  <dt>Last name</dt>
+  <dd><%= @guest.last_name %></dd>
+
+  <dt>Email</dt>
+  <dd><%= @guest.email %></dd>
+
+  <dt>Address 1</dt>
+  <dd><%= @guest.address_1 %></dd>
+
+  <dt>Address 2</dt>
+  <dd><%= @guest.address_2 %></dd>
+
+  <dt>City</dt>
+  <dd><%= @guest.city %></dd>
+
+  <dt>State</dt>
+  <dd><%= @guest.state %></dd>
+
+  <dt>Zip</dt>
+  <dd><%= @guest.zip %></dd>
+  
+</dl>
+
+

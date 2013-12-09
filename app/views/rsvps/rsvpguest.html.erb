@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h1>Welcome <%= @guest.first_name + ' ' + @guest.last_name %> </h1>
+</div>
+
+<%= form_tag(guest_rsvps_url, method: 'post', class: 'form-horizontal') do %>
+  
+  <%= hidden_field_tag :guest_id, @guest.id %>
+
+  <div class="form-group">
+    <%= label_tag :_numguests, 'Will you be attending?', class: 'col-md-3 control-label' %>
+    <div class="col-md-6">
+          <%= select_tag :num_guests,options_for_select([['Yes!','1'], ['Yes, and I am bringing a guest!','2'], ['Unfortunately, I can not make it.', '0']]) %> 
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :your_food_preference, nil, class: 'col-md-3 control-label' %>
+    <div class="col-md-6">
+          <%= select_tag :your_food_preference, options_for_select(food_options) %> 
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :guest_food_preference, nil, class: 'col-md-3 control-label' %>
+    <div class="col-md-6">
+          <%= select_tag :guest_food_preference, options_for_select(food_options) %> 
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-6">
+      <%= submit_tag "Create Rsvp", class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
