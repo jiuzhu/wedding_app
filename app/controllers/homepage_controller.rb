@@ -37,19 +37,19 @@ class HomepageController < ApplicationController
 		@numTotal = 0
 
 		if rsvps
-		rsvps.each do |rsvp|
-			@numTotal += 2
+			rsvps.each do |rsvp|
+				@numTotal += 2
 
-			if rsvp.num_guests >= 0
 				@numYes += rsvp.num_guests
-			else
-				@numNo += 2
+				@numNo += 2 - rsvp.num_guests
 			end
 		end
-		end
 				
-		@numPending = @numGuests - @numTotal
-
+		@numPending = @numGuests - @numNo - @numYes
+		
+		if @numPending < 0
+			@numPending = 0
+		end
 	end
 
 

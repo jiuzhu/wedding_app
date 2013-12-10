@@ -67,11 +67,14 @@ class RsvpsController < ApplicationController
   end
 
   def guestcreate
+    @guest = Guest.find_by(id: params[:guest_id])
+
     @rsvp = Rsvp.new
     @rsvp.guest_id = params[:guest_id]
     @rsvp.your_food_preference = params[:your_food_preference]
     @rsvp.guest_food_preference = params[:guest_food_preference]
     @rsvp.num_guests = params[:num_guests]
+    @rsvp.user_id = @guest.user_id
 
     if @rsvp.save
       redirect_to rsvp_thankyou_url, notice: "Thanks for your RSVP! We look forward to seeing you soon!"

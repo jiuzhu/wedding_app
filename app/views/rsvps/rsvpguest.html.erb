@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Welcome <%= @guest.first_name + ' ' + @guest.last_name %> </h1>
+  <h1>Welcome <%= @guest.first_name + ' ' + @guest.last_name+'!' %> </h1>
 </div>
 
 <%= form_tag(guest_rsvps_url, method: 'post', class: 'form-horizontal') do %>
