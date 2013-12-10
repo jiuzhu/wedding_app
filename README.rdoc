@@ -1,3 +1,9 @@
 == README
 
-Please log in as betsy@gmail.com password kellogg1 for a user account with data.
+Please log in as: 
+betsy@gmail.com 
+password kellogg1 
+
+for a user account with data.
+
+The user stories and mock ups are stored in a .pptx file located in the app directory as: wedding_app_mock_up.pptx.
